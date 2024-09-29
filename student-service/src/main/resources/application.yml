@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: student-service
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/student_service
+
+  jackson:
+    date-format: yyyy-MM-dd
