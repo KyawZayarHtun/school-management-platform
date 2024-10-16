@@ -8,3 +8,6 @@ spring:
 
   jackson:
     date-format: yyyy-MM-dd
+  security:
+    user:
+

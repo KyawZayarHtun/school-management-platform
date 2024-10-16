@@ -17,14 +17,15 @@ public record StudentService(StudentRepository studentRepository) {
                 .map(StudentDetail::new);
     }
 
-    Mono<Student> registerStudent(Mono<StudentRegistrationReq> studentRegistrationRequest) {
+    Mono<StudentDetail> registerStudent(Mono<StudentRegistrationReq> studentRegistrationRequest) {
         return studentRegistrationRequest
                 .map(Student::new)
-                .flatMap(studentRepository::save);
+                .flatMap(studentRepository::save)
+                .map(StudentDetail::new);
     }
 
-    Flux<Student> insertAllStudents(Flux<Student> students) {
-        return studentRepository.saveAll(students);
+    Flux<StudentDetail> insertAllStudents(Flux<Student> students) {
+        return studentRepository.saveAll(students).map(StudentDetail::new);
     }
 
     Mono<StudentProfile> updateStudentProfile(String id, Mono<StudentProfileUpdateReq> studentProfileUpdateReq) {

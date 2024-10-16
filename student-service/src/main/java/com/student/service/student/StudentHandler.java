@@ -30,7 +30,6 @@ public record StudentHandler(StudentService studentService) {
     }
 
 
-    // For Demo Purpose
     public Mono<ServerResponse> createStudents(ServerRequest request) {
         var students = request.bodyToFlux(Student.class);
         return ServerResponse.status(HttpStatus.CREATED)
