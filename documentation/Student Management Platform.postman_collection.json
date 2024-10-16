@@ -133,7 +133,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"name\": \"Kyaw Zayar Htun\",\n        \"phone\": \"421-542-2829\",\n        \"profileImagePath\": null,\n        \"gender\": null,\n        \"dob\": \"2001-08-14\"\n    }",
+							"raw": "{\n        \"name\": \"\",\n        \"phone\": \"\",\n        \"profileImagePath\": null,\n        \"gender\": null,\n        \"dob\": \"2001-08-15\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -150,6 +150,58 @@
 							"path": [
 								"students",
 								"66f980ee0ac16e607d2f3825"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mail",
+			"item": [
+				{
+					"name": "Get All Mail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/mails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"mails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipients\": [\n        {\"mail\": \"kyawzayar.ht@gmail.com\", \"personalName\": \"Kyaw Zayar\"},\n        {\"mail\": \"naymyo4892@gmail.com\", \"personalName\": \"Nay Myo\"}\n    ],\n    \"subject\": \"new things\",\n    \"body\": \"<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Email Template</title></head><body style='margin: 0; padding: 0; background-color: #f7f7f7;'><div style='max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; overflow: hidden;'><div style='background-color: #4a90e2; padding: 20px; text-align: center;'><h1 style='color: white; margin: 0;'>Welcome to Our Service!</h1></div><div style='padding: 20px;'><p style='font-size: 16px; color: #333333;'>Hello,</p><p style='font-size: 16px; color: #333333;'>Thank you for signing up for our service. We are excited to have you on board.</p><p style='font-size: 16px; color: #333333;'>To get started, please visit our website:</p><a href='https://example.com' style='display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #4a90e2; color: white; text-decoration: none; border-radius: 4px;'>Get Started</a></div><div style='background-color: #f7f7f7; padding: 10px; text-align: center;'><p style='font-size: 12px; color: #999999;'>&copy; 2024 Your Company. All rights reserved.</p></div></div></body></html>\"\n,\n    \"cc\": [\n         {\"mail\": \"mgkyawzayartun@gmail.com\", \"personalName\": \"Mg Kyaw Zayar Htun\"}\n    ],\n    \"bcc\": [\n        {\"mail\": \"ayemyattun210@gmail.com\", \"personalName\": \"Aye Myat Htun\"}\n    ],\n    \"attachments\": [\"fdas\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/mails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"mails"
 							]
 						}
 					},
